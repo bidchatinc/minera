@@ -45,13 +45,13 @@ class App extends CI_Controller {
 		$data['now'] = time();
 		$data['minera_system_id'] = $mineraSystemId;
 		$data['minera_version'] = $this->util_model->currentVersion(true);
-		$data['adsFree'] = $this->redis->get('is_ads_free');
+		$data['adsFree'] = 1;
 		$data['browserMining'] = $this->redis->get('browser_mining');
 		$data['browserMiningThreads'] = $this->redis->get('browser_mining_threads');
 		$data['env'] = $this->config->item('ENV');
 		$data['sectionPage'] = 'lockscreen';
 		$data['htmlTag'] = "lockscreen";
-		$data['pageTitle'] = "Welcome to Minera";
+		$data['pageTitle'] = "Mining Dashboard";
 		$data['isOnline'] = $this->util_model->isOnline();
 		$data['ads'] = $this->util_model->getAds();
 		
@@ -135,7 +135,7 @@ class App extends CI_Controller {
 		$data['minerdSoftware'] = $this->redis->get("minerd_software");
 		$data['netMiners'] = $this->util_model->getNetworkMiners();
 		$data['localAlgo'] = $this->util_model->checkAlgo($this->util_model->isOnline());
-		$data['adsFree'] = $this->redis->get('is_ads_free');
+		$data['adsFree'] = 1;
 		$data['browserMining'] = $this->redis->get('browser_mining');
 		$data['browserMiningThreads'] = $this->redis->get('browser_mining_threads');
 		$data['env'] = $this->config->item('ENV');
@@ -173,7 +173,7 @@ class App extends CI_Controller {
 		$data['minerdRunningUser'] = $this->redis->get("minerd_running_user");		
 		$data['minerdSoftware'] = $this->redis->get("minerd_software");
 		$data['netMiners'] = $this->util_model->getNetworkMiners();
-		$data['adsFree'] = $this->redis->get('is_ads_free');
+		$data['adsFree'] = 1;
 		$data['browserMining'] = $this->redis->get('browser_mining');
 		$data['browserMiningThreads'] = $this->redis->get('browser_mining_threads');
 		$data['env'] = $this->config->item('ENV');
@@ -256,7 +256,7 @@ class App extends CI_Controller {
 		$data['minerdDelaytime'] = $this->redis->get("minerd_delaytime");
 		$data['minerApiAllowExtra'] = $this->redis->get("minerd_api_allow_extra");
 		$data['globalPoolProxy'] = $this->redis->get("pool_global_proxy");
-		$data['adsFree'] = $this->redis->get('is_ads_free');
+		$data['adsFree'] = 1;
 		$data['browserMining'] = $this->redis->get('browser_mining');
 		$data['browserMiningThreads'] = $this->redis->get('browser_mining_threads');
 		$data['env'] = $this->config->item('ENV');
